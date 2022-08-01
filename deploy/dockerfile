@@ -1,0 +1,21 @@
+FROM asia.gcr.io/synnex-taiwan-nonprod/synnex-svc-cli:latest
+
+# Increase the number of concurrent worker threads
+# http://docs.libuv.org/en/v1.x/threadpool.html
+# https://www.future-processing.pl/blog/on-problems-with-threads-in-node-js/
+ENV UV_THREADPOOL_SIZE=64
+
+WORKDIR "src/webapp"
+
+COPY . ./synnex
+
+WORKDIR "synnex/svc/jobs"
+
+RUN git config --global http.sslVerify "false" 
+
+RUN npm install
+
+#**** Expose the port on which the app is listening for connections ****#
+EXPOSE 3000
+
+ENTRYPOINT ["node","app.js"]

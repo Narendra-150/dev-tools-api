@@ -1,0 +1,7 @@
+{
+    "features": {
+        "cloudConfig": false,
+        "configtype": "svc",
+        "useProxyModels" : false
+    }   
+}

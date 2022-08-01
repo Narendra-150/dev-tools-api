@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "665c0d1c-781d-4a85-a348-795851899195",
+		"name": "dev-tools-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "demo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Demo\": \"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/demo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"demo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "queryGenerator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tableName\": \"ocm.test\",\r\n    \"operation\": \"select\",\r\n    \"key\": {\r\n        \"Address\": \"Pune\",\r\n        \"MNo\": \"4545454\"\r\n    },\r\n    \"item\": [\r\n        \"Address\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/querygenerator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"querygenerator"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
